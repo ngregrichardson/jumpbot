@@ -20,16 +20,16 @@ importers:
   apps/bot:
     specifiers:
       '@types/node': ^17.0.12
-      dbotjs: workspace:*
       discord.js: ^14.7.1
       eslint: 7.32.0
       eslint-config-custom: workspace:*
+      jumpbot: workspace:*
       rimraf: ^4.3.0
       tsconfig: workspace:*
       typescript: ^4.5.3
     dependencies:
-      dbotjs: link:../../packages/dbotjs
       discord.js: 14.7.1
+      jumpbot: link:../../packages/jumpbot
     devDependencies:
       '@types/node': 17.0.45
       eslint: 7.32.0
@@ -38,7 +38,19 @@ importers:
       tsconfig: link:../../packages/tsconfig
       typescript: 4.9.5
 
-  packages/dbotjs:
+  packages/eslint-config-custom:
+    specifiers:
+      '@typescript-eslint/eslint-plugin': ^5.54.0
+      '@typescript-eslint/parser': ^5.54.0
+      eslint-config-prettier: ^8.3.0
+      eslint-config-turbo: latest
+    dependencies:
+      '@typescript-eslint/eslint-plugin': 5.54.0_zoonaykeg3xxmj2rwkmnkyt2om
+      '@typescript-eslint/parser': 5.54.0
+      eslint-config-prettier: 8.6.0
+      eslint-config-turbo: 0.0.9
+
+  packages/jumpbot:
     specifiers:
       chalk: ^5.2.0
       discord.js: ^14.7.1
@@ -62,18 +74,6 @@ importers:
       tsconfig-paths: 4.1.2
       tsup: 6.6.3_typescript@4.9.5
       typescript: 4.9.5
-
-  packages/eslint-config-custom:
-    specifiers:
-      '@typescript-eslint/eslint-plugin': ^5.54.0
-      '@typescript-eslint/parser': ^5.54.0
-      eslint-config-prettier: ^8.3.0
-      eslint-config-turbo: latest
-    dependencies:
-      '@typescript-eslint/eslint-plugin': 5.54.0_zoonaykeg3xxmj2rwkmnkyt2om
-      '@typescript-eslint/parser': 5.54.0
-      eslint-config-prettier: 8.6.0
-      eslint-config-turbo: 0.0.9
 
   packages/tsconfig:
     specifiers: {}

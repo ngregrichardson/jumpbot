@@ -12,7 +12,7 @@ const getValidDirPath = (path: string) => {
             console.error(e);
             return null;
         } else {
-            fileUrl = new URL(join(global.__dbotjsroot, path));
+            fileUrl = new URL(join(global.__jumpbotroot, path));
         }
     }
 

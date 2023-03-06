@@ -3,5 +3,5 @@ export interface global {}
 
 declare global {
     // eslint-disable-next-line no-var
-    var __dbotjsroot: string;
+    var __jumpbotroot: string;
 }

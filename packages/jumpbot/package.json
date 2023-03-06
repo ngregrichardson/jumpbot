@@ -1,5 +1,5 @@
 {
-  "name": "dbotjs",
+  "name": "jumpbot",
   "version": "1.0.0",
   "description": "A fully typed Discord.js bot boilerplate.",
   "main": "./lib/index.js",

@@ -1,5 +1,5 @@
 import { GatewayIntentBits } from 'discord.js';
-import { startup } from 'dbotjs';
+import { startup } from 'jumpbot';
 import * as url from 'url';
 const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
 

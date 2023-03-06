@@ -1,4 +1,4 @@
-import { CommandData } from 'dbotjs';
+import { CommandData } from 'jumpbot';
 import {
     ApplicationCommandType,
     ChannelType,

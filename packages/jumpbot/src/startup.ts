@@ -2,7 +2,7 @@ import {
     CommandData,
     IBotInitialization,
     IFirebaseCredential,
-} from './types.js';
+} from '@types.js';
 import { Client, Collection } from 'discord.js';
 import {
     deployGlobalCommands,
@@ -35,7 +35,7 @@ export const startup = async (
     //
     // }
 
-    info('Initializing dbotjs bot');
+    info('Initializing jumpbot bot');
     try {
         const client = new Client({
             intents: botInitialization.intents,
@@ -64,7 +64,7 @@ export const startup = async (
                 }
             }
 
-            info('Registering dbotjs events');
+            info('Registering jumpbot events');
             await registerEvents(client, './events');
 
             if (botInitialization.eventsDir) {
@@ -79,7 +79,7 @@ export const startup = async (
                 }
             }
 
-            info('Registering dbotjs commands');
+            info('Registering jumpbot commands');
             await registerCommands(client, './commands');
 
             if (botInitialization.commandsDir) {

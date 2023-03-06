@@ -9,7 +9,7 @@
     "dev": "infisical run -- node dist/app.js"
   },
   "dependencies": {
-    "dbotjs": "workspace:*",
+    "jumpbot": "workspace:*",
     "discord.js": "^14.7.1"
   },
   "devDependencies": {

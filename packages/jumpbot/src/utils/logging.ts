@@ -1,7 +1,7 @@
 import chalk, { ChalkInstance } from 'chalk';
 
 const dbotHeader = (message: string, override?: ChalkInstance) =>
-    `${(override || chalk.green).bold('dbotjs')}: ${message}`;
+    `${(override || chalk.green).bold('jumpbot')}: ${message}`;
 
 export const info = (message: any) => console.log(dbotHeader(message));
 
@@ -27,6 +27,6 @@ export const failedToParseInDirectory = (dir: string, type?: string) => {
 
 export const failedToDeployCommands = () => {
     warn(
-        `Failed to deploy commands for the reasons below. Make sure that all your commands are properly formatted and do not overlap with dbotjs commands.`
+        `Failed to deploy commands for the reasons below. Make sure that all your commands are properly formatted and do not overlap with jumpbot commands.`
     );
 };

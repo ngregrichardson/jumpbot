@@ -1,4 +1,4 @@
-# dbotjs
+# jumpbot
 
 ## 1.0.0
 
