@@ -1,0 +1,40 @@
+{
+  "name": "dbotjs",
+  "version": "1.0.0",
+  "description": "A Discord.js bot boilerplate library.",
+  "main": "./lib/index.js",
+  "types": "./lib/index.d.ts",
+  "type": "module",
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "clean": "rimraf lib/",
+    "build": "tsup src/index.ts --dts",
+    "lint": "eslint ./src/**/*.ts",
+    "test": "pnpm build && infisical run -- node lib/bot/app.js"
+  },
+  "keywords": [
+    "discord",
+    "bot",
+    "discord.js",
+    "boilerplate",
+    "starter"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^8.35.0",
+    "prettier": "^2.8.4",
+    "rimraf": "^4.3.0",
+    "tsc-alias": "^1.8.2",
+    "tsconfig": "workspace:*",
+    "tsconfig-paths": "^4.1.2",
+    "tsup": "^6.6.3",
+    "typescript": "^4.9.5"
+  },
+  "dependencies": {
+    "chalk": "^5.2.0",
+    "discord.js": "^14.7.1"
+  }
+}
