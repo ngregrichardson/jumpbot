@@ -1,10 +1,8 @@
 import { CommandData } from 'dbotjs';
 import {
     ApplicationCommandType,
-    ChannelType,
     ContextMenuCommandBuilder,
     MessageContextMenuCommandInteraction,
-    UserContextMenuCommandInteraction,
 } from 'discord.js';
 
 const execute = async (interaction: MessageContextMenuCommandInteraction) => {
