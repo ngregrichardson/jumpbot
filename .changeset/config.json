@@ -7,5 +7,5 @@
   "access": "public",
   "baseBranch": "main",
   "updateInternalDependencies": "patch",
-  "ignore": ["bot", "tsconfig", "eslint-config-custom"]
+  "ignore": ["bot", "eslint-config-custom"]
 }
