@@ -1,5 +1,11 @@
 # jumpbot
 
+## 1.0.2
+
+### Patch Changes
+
+-   1a0fdb4: Switch to bundling to ESM
+
 ## 1.0.1
 
 ### Patch Changes
