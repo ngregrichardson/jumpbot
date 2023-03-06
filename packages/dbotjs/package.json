@@ -1,7 +1,7 @@
 {
   "name": "dbotjs",
   "version": "0.0.0",
-  "description": "A fully typed Discord.js bot boilerplate library.",
+  "description": "A fully typed Discord.js bot boilerplate.",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
   "type": "module",
