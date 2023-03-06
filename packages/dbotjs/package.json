@@ -1,6 +1,6 @@
 {
   "name": "dbotjs",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "description": "A Discord.js bot boilerplate library.",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
@@ -10,7 +10,7 @@
   ],
   "scripts": {
     "clean": "rimraf lib/",
-    "build": "tsup src/index.ts --dts",
+    "build": "tsup",
     "lint": "eslint ./src/**/*.ts",
     "test": "pnpm build && infisical run -- node lib/bot/app.js"
   },

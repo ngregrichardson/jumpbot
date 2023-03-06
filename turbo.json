@@ -3,14 +3,15 @@
   "pipeline": {
     "build": {
       "dependsOn": ["^build"],
-      "outputs": ["lib/**"]
+      "outputs": ["lib/**", "dist/**"]
     },
     "lint": {
       "outputs": []
     },
     "dev": {
       "dependsOn": ["build"],
-      "cache": false
+      "cache": false,
+      "persistent": true
     }
   },
   "globalEnv": ["BOT_TOKEN", "CLIENT_ID"]
