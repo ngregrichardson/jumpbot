@@ -2,7 +2,7 @@
   "name": "jumpbot",
   "version": "1.0.1",
   "description": "A fully typed Discord.js bot boilerplate.",
-  "main": "./lib/index",
+  "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
   "type": "module",
   "files": [

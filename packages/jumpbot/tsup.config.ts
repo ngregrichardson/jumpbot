@@ -7,5 +7,5 @@ export default defineConfig({
     shims: true,
     outDir: 'lib',
     dts: true,
-    format: 'cjs',
+    format: 'esm',
 });
