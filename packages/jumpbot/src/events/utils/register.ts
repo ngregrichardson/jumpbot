@@ -16,5 +16,5 @@ export const registerEvents = async (client: Client, path: string) => {
         });
     }
 
-    info(`Registered ${imports.length} events'`);
+    info(`Registered ${imports.length} events`);
 };

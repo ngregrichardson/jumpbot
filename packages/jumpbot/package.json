@@ -4,15 +4,17 @@
   "description": "A fully typed Discord.js bot boilerplate.",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
+  "bin": {
+    "jumpbot": "./lib/cli/index.js"
+  },
   "type": "module",
   "files": [
     "lib"
   ],
   "scripts": {
-    "clean": "rimraf lib/",
     "build": "tsup",
     "lint": "eslint ./src/**/*.ts",
-    "test": "pnpm build && infisical run -- node lib/bot/app.js"
+    "test": "infisical run -- vitest --ui"
   },
   "keywords": [
     "discord",
@@ -24,17 +26,20 @@
   "author": "Noah Richardson",
   "license": "MIT",
   "devDependencies": {
+    "@types/node": "^17.0.12",
+    "@vitest/ui": "^0.29.3",
     "eslint": "^8.35.0",
     "prettier": "^2.8.4",
-    "rimraf": "^4.3.0",
-    "tsc-alias": "^1.8.2",
     "tsconfig": "workspace:*",
-    "tsconfig-paths": "^4.1.2",
     "tsup": "^6.6.3",
-    "typescript": "^4.9.5"
+    "typescript": "^4.9.5",
+    "vitest": "^0.29.3"
   },
   "dependencies": {
+    "@commander-js/extra-typings": "^10.0.3",
     "chalk": "^5.2.0",
-    "discord.js": "^14.7.1"
+    "commander": "^10.0.0",
+    "discord.js": "^14.7.1",
+    "dotenv": "^16.0.3"
   }
 }

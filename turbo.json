@@ -14,5 +14,5 @@
       "persistent": true
     }
   },
-  "globalEnv": ["BOT_TOKEN", "CLIENT_ID"]
+  "globalEnv": ["BOT_TOKEN", "CLIENT_ID", "TEST_GUILD_ID"]
 }

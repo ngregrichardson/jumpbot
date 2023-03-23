@@ -11,5 +11,6 @@ startup({
     intents: [GatewayIntentBits.Guilds],
     baseDir: __dirname,
     commandsDir: './commands',
+    eventsDir: './events',
     testGuildId: process.env.TEST_GUILD_ID,
 });

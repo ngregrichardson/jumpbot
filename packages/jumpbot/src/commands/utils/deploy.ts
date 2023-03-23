@@ -1,10 +1,9 @@
-import { Client, REST, Routes } from 'discord.js';
+import { Client, Guild, REST, Routes } from 'discord.js';
 import { CommandData, IBotCredential } from '@types.js';
 import {
     failedToDeployCommands,
     failedToParseInDirectory,
     info,
-    warn,
 } from '@utils/logging.js';
 import { parseCommands } from './index.js';
 
@@ -79,21 +78,48 @@ export const deployGuildCommands = async (
     }
 };
 
-export const removeGuildCommands = async (client: Client) => {
+const getGuilds = async (botCredential: IBotCredential, client?: Client) => {
+    if (client) {
+        return client.guilds.fetch().then((guilds) => guilds.map((g) => g));
+    } else {
+        const rest = getRESTClient(botCredential);
+        return (await rest.get(Routes.userGuilds())) as Guild[];
+    }
+};
+
+export const removeGuildCommands = async (
+    botCredential: IBotCredential,
+    client?: Client
+) => {
     info('Removing guild-specific commands');
-    return client.guilds
-        .fetch()
-        .then((guilds) => {
-            guilds.forEach((guild) => {
-                guild
-                    .fetch()
-                    .then((g) => g.commands.set([]))
-                    .catch(() => {
-                        // Ignored
-                    });
-            });
-        })
-        .catch(() => {
-            warn('Failed to remove existing commands for the reasons below.');
-        });
+    const rest = getRESTClient(botCredential);
+
+    const guilds = await getGuilds(botCredential, client);
+
+    const removalPromises = [];
+
+    for (const guild of guilds) {
+        removalPromises.push(
+            rest.put(
+                Routes.applicationGuildCommands(
+                    botCredential.clientId,
+                    guild.id
+                ),
+                { body: [] }
+            )
+        );
+    }
+
+    return Promise.all(removalPromises).catch((e) => {
+        throw e;
+    });
+};
+
+export const removeGlobalCommands = async (botCredential: IBotCredential) => {
+    info('Removing global commands');
+    const rest = getRESTClient(botCredential);
+
+    return rest.put(Routes.applicationCommands(botCredential.clientId), {
+        body: [],
+    });
 };

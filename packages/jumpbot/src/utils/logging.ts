@@ -1,12 +1,19 @@
 import chalk, { ChalkInstance } from 'chalk';
 
-const dbotHeader = (message: string, override?: ChalkInstance) =>
-    `${(override || chalk.green).bold('jumpbot')}: ${message}`;
+const formatJumpbotMessage = (
+    message: string,
+    prefix?: string,
+    color?: ChalkInstance
+) =>
+    `${(color || chalk.green).bold(
+        `jumpbot${prefix ? ` ${prefix}` : ''}`
+    )}: ${message}`;
 
-export const info = (message: any) => console.log(dbotHeader(message));
+export const info = (message: any) =>
+    console.log(formatJumpbotMessage(message));
 
 export const error = (message: any, e?: any, throws = false) => {
-    console.error(dbotHeader(message, chalk.red));
+    console.error(formatJumpbotMessage(message, 'error', chalk.red));
     if (e) {
         console.error(e);
 
@@ -15,7 +22,7 @@ export const error = (message: any, e?: any, throws = false) => {
 };
 
 export const warn = (message: any) =>
-    console.warn(dbotHeader(message, chalk.yellow));
+    console.warn(formatJumpbotMessage(message, 'warning', chalk.yellow));
 
 export const failedToParseInDirectory = (dir: string, type?: string) => {
     warn(
