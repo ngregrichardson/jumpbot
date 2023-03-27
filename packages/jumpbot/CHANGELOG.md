@@ -1,5 +1,11 @@
 # jumpbot
 
+## 1.0.4
+
+### Patch Changes
+
+-   434472d: Added additional error logging for CLI
+
 ## 1.0.3
 
 ### Patch Changes
