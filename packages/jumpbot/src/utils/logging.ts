@@ -24,11 +24,15 @@ export const error = (message: any, e?: any, throws = false) => {
 export const warn = (message: any) =>
     console.warn(formatJumpbotMessage(message, 'warning', chalk.yellow));
 
-export const failedToParseInDirectory = (dir: string, type?: string) => {
+export const failedToParseInDirectory = (
+    dir: string,
+    type?: string,
+    message?: string
+) => {
     warn(
-        `Failed to parse ${
-            type || 'files'
-        } in ${dir}. Are you sure this is a valid directory?`
+        `Failed to parse ${type || 'files'} in ${dir}. ${
+            message ? message : 'Are you sure this is a valid directory?'
+        }`
     );
 };
 

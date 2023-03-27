@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "build": "tsup",
-    "dev": "infisical run -- node dist/app.js"
+    "dev": "infisical run -- node dist/app.js",
+    "guildCommands": "infisical run --env=deploy -- node node_modules/jumpbot/lib/cli/index.js deploy ./dist/commands"
   },
   "dependencies": {
     "discord.js": "^14.7.1",

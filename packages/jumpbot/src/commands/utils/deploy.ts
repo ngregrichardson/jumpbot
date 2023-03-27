@@ -22,8 +22,8 @@ const getRESTCommands = async (...paths: string[]) => {
         try {
             const parsedCommands = await parseCommands(path);
             commands = [...commands, ...RESTifyCommands(parsedCommands)];
-        } catch {
-            failedToParseInDirectory(path, 'commands');
+        } catch (e: any) {
+            failedToParseInDirectory(path, 'commands', e?.message);
         }
     }
 

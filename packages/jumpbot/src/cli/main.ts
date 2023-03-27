@@ -14,7 +14,7 @@ import {
 } from '@commands/utils/deploy.js';
 import { IBotCredential } from '@types.js';
 import { handleDiscordError, safelyRemoveCommands } from '@cli/output.js';
-import { error, warn } from '@utils/logging.js';
+import { error, info, warn } from '@utils/logging.js';
 import { DiscordAPIError } from 'discord.js';
 import { fileURLToPath } from 'url';
 
@@ -125,10 +125,14 @@ const deployCommand = createCommand('deploy')
                 }
             }
 
-            if (!options.ignoreErrors) {
+            if (options.ignoreErrors) {
+                warn(`'${dir}' is not a valid directory, skipping`);
+            } else {
                 deployCommand.error(`'${dir}' is not a valid directory`);
             }
         }
+
+        info(`Found ${validDirectories.length - 1} valid command directories`);
 
         switch (options.remove) {
             case RemovalType.GUILD:
