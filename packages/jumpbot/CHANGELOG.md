@@ -1,5 +1,11 @@
 # jumpbot
 
+## 1.0.3
+
+### Patch Changes
+
+-   a72b251: Added CLI interface
+
 ## 1.0.2
 
 ### Patch Changes
